@@ -1,0 +1,19 @@
+-py
+  mode = 'archive'
+  print(mode)
+doctype html
+html lang="ja"
+  -include header.baseslim
+  body
+    -include menu.baseslim
+    #content-wrapper
+      #content
+        h2 class="content-head is-center" id="next_concert"
+          過去の演奏会
+        .archieve_main
+          ${self.body()}
+          .pagenation
+            p
+              a href="/"
+                | back
+      -include footer.baseslim

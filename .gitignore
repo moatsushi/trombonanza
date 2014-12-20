@@ -1,0 +1,7 @@
+/org.trombonanza.hedgehog
+/index.html
+.DS_Store
+local/contents/slim/archive/
+*.pyc
+
+
