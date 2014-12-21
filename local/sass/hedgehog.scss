@@ -347,6 +347,12 @@ a.pure-button-primary {
 .archive-list:nth-child(2n+1):hover {
    background-color: #f3f4f5;
 }
+.concertimage {
+//    width: 40%;
+    margin: 0 auto 1em auto;
+    display: block;
+}
+
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some

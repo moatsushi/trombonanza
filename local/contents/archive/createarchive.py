@@ -41,13 +41,14 @@ def execStage(c, stageId):
       concertnameen = i[3]
       concertdate_f = i[4]
       concertpagename = i[5]
-      concertplace = i[7]
-      concertplaceen = i[8]
+      concertplace = i[8]
+      concertplaceen = i[9]
       c_datetime = datetime.datetime.fromordinal(int(concertdate_f + 12.000001 / 24.0) - 1721425)
       concertdate = c_datetime.strftime("%Y年%m月%d日（%a）")
       timh = (concertdate_f - int(concertdate_f)) * 24.0 + 12.000001
       timm = (timh - int(timh)) * 60.0
       concerttime = "{timh:02d}:{timm:02d}".format(timh=int(timh), timm=int(timm))
+      concertimage = i[6]
     
     
     print(str(concertid) + ", " + concertname + concertplace + ", " + concertdate + concerttime)
@@ -55,8 +56,8 @@ def execStage(c, stageId):
     
     # makoは同じディレクトリに置かれたテンプレートファイルしか使用できない
     add_str(text, '-inherit archieve.baseslim')
-    add_str(text, '-block titletag_name')
-    add_str(text, '  過去の演奏会 {cname}'.format(cname=concertname))
+#    add_str(text, '-block titletag_name')
+#    add_str(text, '  過去の演奏会 {cname}'.format(cname=concertname))
     add_str(text, '-block subpage_name')
     add_str(text, '  {cname}'.format(cname=concertname))
     add_str(text, '-block concert_date')
@@ -68,6 +69,8 @@ def execStage(c, stageId):
 #    add_str(text, '-block next_link')
 #    add_str(text, '  {clink}'.format(clink=concertid + 1))
     add_str(text, '/! body content')
+    if (concertimage != 0 and concertimage != None):
+      add_str(text, 'img.pure-u-1.pure-u-md-1-2.concertimage src="/' + concertimage + '" alt="' + concertname + '"')
     add_str(text, '.pure-g.archive-list.archive-list-title')
     add_str(text, '  .title.pure-u-1.pure-u-lg-12-24 曲名')
     add_str(text, '  .composer.pure-u-8-24.pure-u-lg-4-24 作曲')
@@ -81,8 +84,11 @@ def execStage(c, stageId):
       add_str(text, '.pure-g.archive-list.archive-list-title')
       add_str(text, '  .title.pure-u-1.pure-u-lg-12-24 {cname}'.format(cname=i[3]))
       add_str(text, '  .composer.pure-u-8-24.pure-u-lg-4-24 {ccomp}'.format(ccomp=i[4]))
-      add_str(text, '  .arranger.pure-u-8-24.pure-u-lg-4-24 {carr}'.format(carr=(i[5] if i[5] != None else '')))
-      add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ctrb}Trbs.{ccomm}'.format(ctrb=i[6], ccomm=(i[7] if i[7] != None else '')))
+      add_str(text, '  .arranger.pure-u-8-24.pure-u-lg-4-24 {carr}'.format(carr=(i[5] if (i[5] != None and i[5] != 0) else '')))
+      if (i[6] != None and i[6] != 0):
+        add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ctrb}Trbs.{ccomm}'.format(ctrb=i[6], ccomm=(i[7] if (i[7] != None and i[7] != 0) else '')))
+      else:
+        add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ccomm}'.format(ccomm=(i[7] if (i[7] != None and i[7] != 0) else '')))
       add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {call}'.format(call=('全員合奏' if i[8] == True else '')))
       add_str(text, '  ')
     

@@ -46,8 +46,8 @@ def execStage(c):
       concertnameen = i[3]
       concertdate_f = i[4]
       concertpagename = i[5]
-      concertplace = i[7]
-      concertplaceen = i[8]
+      concertplace = i[8]
+      concertplaceen = i[9]
       c_datetime = datetime.datetime.fromordinal(int(concertdate_f + 12.000001 / 24.0) - 1721425)
       concertdate = c_datetime.strftime("%Y年%m月%d日（%a）")
       timh = (concertdate_f - int(concertdate_f)) * 24.0 + 12.000001
