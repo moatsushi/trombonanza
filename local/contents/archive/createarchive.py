@@ -84,9 +84,12 @@ def execStage(c, stageId):
       add_str(text, '.pure-g.archive-list.archive-list-title')
       add_str(text, '  .title.pure-u-1.pure-u-lg-12-24 {cname}'.format(cname=i[3]))
       add_str(text, '  .composer.pure-u-8-24.pure-u-lg-4-24 {ccomp}'.format(ccomp=i[4]))
-      add_str(text, '  .arranger.pure-u-8-24.pure-u-lg-4-24 {carr}'.format(carr=(i[5] if (i[5] != None and i[5] != 0) else '')))
-      if (i[6] != None and i[6] != 0):
-        add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ctrb}Trbs.{ccomm}'.format(ctrb=i[6], ccomm=(i[7] if (i[7] != None and i[7] != 0) else '')))
+      if (i[5] != None and i[5] != "0"):
+        add_str(text, '  .arranger.pure-u-8-24.pure-u-lg-4-24 {carr}'.format(carr=(i[5])))
+      else:
+        add_str(text, '  .arranger.pure-u-8-24.pure-u-lg-4-24 ')
+      if (i[6] != None and i[6] != "0"):
+        add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ctrb}Trbs {ccomm}'.format(ctrb=i[6], ccomm=(i[7] if (i[7] != None and i[7] != "0") else '')))
       else:
         add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {ccomm}'.format(ccomm=(i[7] if (i[7] != None and i[7] != 0) else '')))
       add_str(text, '  .pure-u-4-24.pure-u-lg-2-24 {call}'.format(call=('全員合奏' if i[8] == True else '')))

@@ -1,7 +1,9 @@
+doctype html
 -py
+  #from datetime import date
+  #print(date.today().strftime("%Y"))
   mode = 'archive'
   print(mode)
-doctype html
 html lang="ja"
   -include file="header.baseslim"
   body
