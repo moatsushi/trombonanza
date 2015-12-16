@@ -3,5 +3,5 @@
 .DS_Store
 local/contents/slim/archive/
 *.pyc
-
+*.ai
 
