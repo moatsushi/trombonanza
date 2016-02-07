@@ -4,4 +4,9 @@
 local/contents/slim/archive/
 *.pyc
 *.ai
+local/contents/slim/archieve.baseslim
+local/contents/slim/archiveindex.baseslim
+local/contents/slim/footer.baseslim
+local/contents/slim/header.baseslim
+local/contents/slim/menu.baseslim
 
