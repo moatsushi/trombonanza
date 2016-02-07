@@ -1,2 +1,8 @@
+-py
+  from datetime import date
+  date_year = date.today().strftime("%Y")
+  date_generate = date.today()
+  
 div class="footer l-box is-center"
-  Copyright (c) 2015 TROMBONANZA. All rights reserved.
+  Copyright (c) ${date_year} TROMBONANZA. All rights reserved.
+  <!-- ${date_generate} -->

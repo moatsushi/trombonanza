@@ -1,3 +1,6 @@
+-py
+  from datetime import date
+  date_year = date.today().strftime("%Y")
 doctype 5
 html lang="ja"
     head
@@ -50,6 +53,10 @@ html lang="ja"
             .content
                 h2.content-head.is-center id="next_concert"
                     第36回定期演奏会
+                .pure-g
+                    .l-box.pure-u-1.pure-u-md-1-1.pure-u-lg-1-1
+                        p
+                            第36回定期演奏会は終了いたしました。次回は2017年1月8日（日）、横浜みなとみらいホール小ホールにて予定しております。
                 .pure-g
                     .l-box.pure-u-1.pure-u-md-2-2.pure-u-lg-4-4
                     .l-box.pure-u-1.pure-u-md-1-2.pure-u-lg-2-4
@@ -139,4 +146,4 @@ html lang="ja"
                 .l-box-lrg.is-center.pure-u-1 id="footer"
                     img.pure-img-responsive alt="next concert" src="images/dream.jpg"
                 .pure-u-1
-                    Copyright (c) 2015 TROMBONANZA. All rights reserved.
+                    Copyright (c) ${date_year} TROMBONANZA. All rights reserved.
