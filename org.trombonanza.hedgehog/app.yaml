@@ -1,0 +1,43 @@
+application: trombonanza-org
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /images
+  static_dir: images
+
+- url: /style
+  static_dir: style
+
+- url: /script
+  static_dir: script
+
+- url: /archive/
+  static_dir: archive
+  secure: always
+
+- url: /archive
+  static_files: archive/index.html
+  upload: archive/index.html
+  secure: always
+
+- url: /contact
+  script: contactform.app
+  secure: always
+
+- url: /(.*\.(txt|ico|xml))$
+  static_files: \1
+  upload: .*\.(txt|ico|xml)$
+  secure: always
+
+- url: /
+  static_files: index.html
+  upload: index.html
+  secure: always
+
+libraries:
+- name: webapp2
+  version: latest
+

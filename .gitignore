@@ -1,5 +1,8 @@
-/org.trombonanza.hedgehog
-/index.html
+/org.trombonanza.hedgehog/archive
+/org.trombonanza.hedgehog/*.py
+/org.trombonanza.hedgehog/*.html
+/org.trombonanza.hedgehog/*.txt
+/org.trombonanza.hedgehog/*.md
 .DS_Store
 local/contents/slim/archive/
 *.pyc
