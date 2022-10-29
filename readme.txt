@@ -8,3 +8,10 @@
 - slim2html
   cd local/contents
   ./slim2html.sh
+
+## Deploy
+
+```
+gcloud auth login
+gcloud app deploy
+```
